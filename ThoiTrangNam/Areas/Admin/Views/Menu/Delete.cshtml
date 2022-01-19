@@ -1,0 +1,126 @@
+﻿@model MyClass.Models.Menu
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+    <!-- Main contnet -->
+    <section class="content my-2 ">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="row">
+                        <div class="row-md-6">
+                            <strong>XÁC NHẬN XÓA Menu</strong>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a href="@Url.Action("Edit", "Menu", new { id = Model.Id })" class="btn btn-sm btn-success"><i class="fas fa-edit"></i> Cập nhật</a>
+                            <a href="@Url.Action("Index", "Menu")" class="btn-sm btn-info"><i class="fas fa-arrow-circle-left"></i> Về danh sách</a>
+                            <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-trash"></i> Xóa</button>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div>
+                <h4>Menu</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Link)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Link)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ParentId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ParentId)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Orders)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Orders)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TableId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TableId)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Type)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CreatedBy)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CreatedAt)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CreatedAt)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UpdatedBy)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UpdatedBy)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UpdatedAt)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UpdatedAt)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Status)
+                    </dd>
+
+                </dl>
+            </div>

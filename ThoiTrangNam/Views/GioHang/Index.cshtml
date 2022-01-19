@@ -1,0 +1,100 @@
+﻿@model IEnumerable<CartItem>
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+@if (Model != null)
+{
+    using (Html.BeginForm("CartUpdate", "Giohang", FormMethod.Post))
+    {
+        <div class="container-fluid">
+            <div class="col-md-12 bb-grids bb-left-agileits-w3layouts">
+                <div class="bb-left-agileits-w3layouts-inner grid">
+                    <figure class="effect-roxy">
+                        <img src="~/Public/images/slidersinger.jpg" alt=" " class="img-responsive" />
+                        <figcaption>
+                            <h3>GIỎ HÀNG</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center">Mã sản phẩm</th>
+                        <th class="text-center">Hình sản phẩm</th>
+                        <th class="text-center">Tên sản phẩm</th>
+                        <th class="text-center">Giá sản phẩm</th>
+                        <th class="text-center">Số lượng</th>
+                        <th class="text-center">Thành tiền</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ double tongtien = 0;}
+                    @foreach (var cart in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@cart.ProductId</td>
+                            <td class="text-center">
+                                <img src="~/Public/images/products/@cart.Img" class="card-img-top" alt="hinhsp" style="height:50%; width:50%;" />
+                            </td>
+                            <td class="text-center"><strong>@cart.Name</strong></td>
+                            <td>@string.Format("{0:0,0}", @cart.Price)₫</td>
+                            <td><input name="qty" value="@cart.Qty" type="number" min="1" /></td>
+                            <td>@string.Format("{0:0,0}", @cart.Amount)₫</td>
+                            <td class="text-center">
+                                <a class="text-danger" href="@Url.Action("CartDel","Giohang", new { productid = cart.ProductId})">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        tongtien += cart.Amount;
+                    }
+                    <tr>
+                        <td colspan="4" class="text-center">
+                            <input class="btn-sm btn-info" name="CAPNHAT" value="Cập nhật" type="submit" />
+                            <a href="@Url.Action("Index","Site")" class="btn-sm btn-warning">Mua thêm sản phẩm</a>
+                            <a href="@Url.Action("CartDelAll","Giohang")" class="btn-sm btn-danger">Xóa đơn hàng</a>
+                            <a href="~/thanh-toan" class="btn-sm btn-success">Thanh toán</a>
+                        </td>
+                        <td class="text-left"><strong>Tổng tiền</strong></td>
+                        <td colspan="2">@string.Format("{0:0,0}", @tongtien)₫</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        }
+    }
+    else
+    {
+    <div class="container">
+        <div class="responsive_tabs_agileits">
+            <div id="horizontalTab">
+                <div class="resp-tabs-container">
+                    <div class="tab">
+                        <div class="single_page_agile_its_w3ls text-center">
+                            <div class="bb-grids bb-left-agileits-w3layouts">
+                                <div class="contact">
+                                    <img src="~/Public/images/Gio-hang-trong.png" class="text-center" />
+                                    <p class="text-footer">
+                                        KHÔNG CÓ SẢN PHẨM TRONG GIỎ HÀNG
+                                    </p>
+                                    <br />
+                                    <form action="@Url.Action("Index","Site")" method="post">
+                                        <button type="submit" class="btn btn-outline-success hvr-outline-out btn-block"><strong>TIẾP TỤC MUA SẮM</strong></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,134 @@
+﻿@model MyClass.Models.User
+
+@{
+    ViewBag.Title = "Xóa thành viên";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content my-2">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>XÁC NHẬN XÓA THÀNH VIÊN</strong>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a href="@Url.Action("Edit", "User", new { id = Model.Id })" class="btn btn-sm btn-success"><i class="fas fa-edit"></i>Cập nhật</a>
+                            <a href="@Url.Action("Index","User")" class="btn-sm btn-info"><i class="fas fa-arrow-circle-left"></i> Về danh sách</a>
+                            <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-trash-alt"></i>Xóa</button>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="width:150px">Tên trường</th>
+                        <th>Nội dung</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.FullName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Email)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Phone)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Roles)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Roles)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Gender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Gender)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.CreatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.CreatedBy)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.CreatedAt)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.CreatedAt)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.UpdatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.UpdatedBy)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.UpdatedAt)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.UpdatedAt)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Status)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /.card-body -->
+
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

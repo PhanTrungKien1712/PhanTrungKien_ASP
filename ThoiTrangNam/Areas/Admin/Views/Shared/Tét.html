@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Dashboard</title>
+
+    <link rel="stylesheet" href="dist/css/style.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        </div>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+                <li class="nav-item">
+                    <div class="navbar-search">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+            <div class="others">
+                <i class="fas fa-search"></i>
+                <a class="fa fa-user" href=""></a>
+            </div>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar">
+            <!-- Brand Logo -->
+            <a class="brand-link">
+                <span class="brand-text">
+                    Loyalty <br />
+                    Program
+                </span>
+            </a>
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                          with font-awesome or any other icon font library -->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-image"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-image"></i>
+                            <p>
+                                Product
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <p>All product</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <p>Inventory</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-image"></i>
+                            <p>
+                                Promontion
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <p>All Campaign</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <p>Collection</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <p>Store</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-image"></i>
+                            <p>
+                                Customer
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </aside>
+    </div>
+    <!-- /.sidebar -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="container">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="row mb-2">
+                <div class="col-sm">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div>
+        <!-- /.content-header -->
+       
+            <div class="col-md-10">
+                <!-- Main content -->
+                <div class="content">
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                        <div class="col-md-7 connectedSortable">
+                            <!-- Custom tabs (Charts with tabs)-->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Redemption
+                                    </h3>
+                                    <div class="card-tools">
+                                        <ul class="nav nav-pills ml-auto">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown" data-offset="-52">
+                                                    Day
+                                                </button>
+                                                <div class="dropdown-menu" role="menu">
+                                                    <a href="#" class="dropdown-item">1</a>
+                                                    <a href="#" class="dropdown-item">2</a>
+                                                    <a href="#" class="dropdown-item">3</a>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div><!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="tab-content p-0">
+                                        <!-- Morris chart - Sales -->
+                                        <div class="chart tab-pane active" id="revenue-chart"
+                                             style="position: relative; height: 300px;">
+                                            <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
+                                        </div>
+                                        <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
+                                            <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                                        </div>
+                                    </div>
+                                </div><!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+
+                        <!-- /.Left col -->
+                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                        <div class="col-md-5 connectedSortable">
+                            <!-- Map card -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Redeem
+                                    </h3>
+                                    <div class="card-tools">
+                                        <ul class="nav nav-pills ml-auto">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown" data-offset="-52">
+                                                    Crircle K - Au Co
+                                                </button>
+                                                <div class="dropdown-menu" role="menu">
+                                                    <a id="sparkline-1" href="#" class="dropdown-item">Crircle K - Au Co</a>
+                                                    <a id="sparkline-2" href="#" class="dropdown-item">Crircle K - Au Co</a>
+                                                    <a id="sparkline-3" href="#" class="dropdown-item">Crircle K - Au Co</a>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-center">
+                                        <strong>Goal Completion</strong>
+                                    </p>
+                                    <div class="info-box">
+                                        <span class="info-box-icon elevation-1"></span>
+                                        <div class="info-box-content">
+                                            <b>Pepsi Can</b>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-primary" style="width: 80%"></div>
+                                            </div>
+                                            <span class="float-right">1000 sales</span>
+                                        </div>
+                                    </div>
+                                    <!-- /.progress-group -->
+                                    <div class="info-box">
+                                        <span class="info-box-icon elevation-1"></span>
+                                        <div class="info-box-content">
+                                            <b>Pepsi Can</b>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-primary" style="width: 80%"></div>
+                                            </div>
+                                            <span class="float-right">1000 sales</span>
+                                        </div>
+                                    </div>
+                                    <!-- /.progress-group -->
+                                    <div class="info-box">
+                                        <span class="info-box-icon elevation-1"></span>
+                                        <div class="info-box-content">
+                                            <b>Pepsi Can</b>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-primary" style="width: 80%"></div>
+                                            </div>
+                                            <span class="float-right">1000 sales</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.card-body-->
+                            <!-- /.card -->
+                            <!-- Calendar -->
+
+                        </div>
+                        <!-- TABLE: LATEST ORDERS -->
+                        <div class="col-md-12 card">
+                            <div class="card-header border-transparent">
+                                <h3 class="card-title">Recent redeem activities</h3>
+                                <section style="float:right">
+                                    <h6>Show</h6>
+                                    <div class="card-tools">
+                                        <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+                                            <option value="null">100</option>
+                                            <option value="null">200</option>
+                                            <option value="null">300</option>
+                                            <option value="null">400</option>
+                                            <option value="null">500</option>
+                                        </select>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </section>
+                                <!-- /.card-header -->
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table m-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Phone number</th>
+                                                    <th>Redeem for Product</th>
+                                                    <th>Amount</th>
+                                                    <th>Date</th>
+                                                    <th>Store</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>0986 765 4321</td>
+                                                    <td>Pepsi can</td>
+                                                    <td>01</td>
+                                                    <td>09:00:00 07/09/2020</td>
+                                                    <td>Circle K - Au Co 86/33 Au Co, Ward 9, Tan Bin District, HCMC</td>
+                                                    <td>Sent request</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0986 765 4321</td>
+                                                    <td>Pepsi can</td>
+                                                    <td>01</td>
+                                                    <td>09:00:00 07/09/2020</td>
+                                                    <td>Circle K - Au Co 86/33 Au Co, Ward 9, Tan Bin District, HCMC</td>
+                                                    <td>Sent request</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>0986 765 4321</td>
+                                                    <td>Pepsi can</td>
+                                                    <td>01</td>
+                                                    <td>09:00:00 07/09/2020</td>
+                                                    <td>Circle K - Au Co 86/33 Au Co, Ward 9, Tan Bin District, HCMC</td>
+                                                    <td>Sent request</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2">
+                gfmhj
+            </div>
+        
+        <!-- /.row (main row) -->
+        <!-- /.content-wrapper -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+</body>
+</html>

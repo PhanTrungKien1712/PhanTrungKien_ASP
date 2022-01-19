@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MyClass.Models.PostInfo>
+@{
+    var topic = ViewBag.Topic;
+}
+@{
+    ViewBag.Title = topic.Name;
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+    <div class="container-fluid">
+        <div class="col-md-12 bb-grids bb-left-agileits-w3layouts">
+            <div class="bb-left-agileits-w3layouts-inner grid">
+                <figure class="effect-roxy">
+                    <img src="~/Public/images/slidersinger.jpg" alt=" " class="img-responsive" />
+                    <figcaption>
+                        <h3>@topic.Name</h3>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        @foreach (var post in Model)
+        {
+            <div class="men-wear-bottom">
+                <div class="col-sm-4 men-wear-left">
+                    <a href="~/@post.Slug">
+                        <img class="img-responsive" src="~/Public/images/posts/@post.Img" alt=" " />
+                    </a>
+                </div>
+                <div class="col-sm-8 men-wear-right">
+                    <h4><a href="~/@post.Slug">@post.Title</a></h4>
+                    <p><i class="glyphicon glyphicon-calendar"></i> @post.CreatedAt <i class="glyphicon glyphicon-comment"></i> 0</p>
+                    <p>@XString.Str_Limit(post.Detail, 400)</p>
+                    <div class="text-right"><a href="~/@post.Slug">Tìm hiểu thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        }
+    </div>

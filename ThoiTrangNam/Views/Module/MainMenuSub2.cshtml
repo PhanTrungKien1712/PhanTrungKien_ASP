@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MyClass.Models.Menu>
+@{
+    var menu = ViewBag.Menu;
+}
+<li class="menu__item dropdown">
+    <a class="menu__link" href="@menu.Link" data-toggle="dropdown">@menu.Name<b class="caret"></b></a>
+    <ul class="dropdown-menu agile_short_dropdown">
+        @foreach (var item in Model)
+        {
+            <li><a href="@item.Link">@item.Name</a></li>
+        }
+    </ul>
+</li>

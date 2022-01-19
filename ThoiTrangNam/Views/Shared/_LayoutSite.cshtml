@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Public/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Public/css/shop-homepage.css" rel="stylesheet" />
+    <link href="~/Public/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Public/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Public/css/easy-responsive-tabs.css" rel="stylesheet" />
+    <link href="~/Public/css/style.css" rel="stylesheet" />
+    <link href="~/Public/css/MyStyle.css" rel="stylesheet" />
+    <link href="~/Public/css/form.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Public/css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/Public/js/jquery-ui.js">
+    <!-- //for bootstrap working -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+
+    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <!-- header -->
+    <div class="header" id="home">
+        <div class="container-fluid">
+            <ul>
+                <li><i class="fa fa-phone" aria-hidden="true"></i> Hotline : 19006656</li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="#">elite@sport.com</a></li>
+                @if (Session["UserCustomer"].Equals(""))
+                {
+                    <li> <a href="" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Đăng ký </a></li>
+                    <li> <a href="~/dang-nhap"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Đăng nhập </a></li>
+
+                }
+                else
+                {
+                    <li>
+                        <a href="~/tai-khoan"><i class="fa fa-user" aria-hidden="true"></i>Tài khoản</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("DangXuat", "KhachHang")"><i class="fa fa-sign-out" aria-hidden="true"></i>Đăng xuất</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <!-- //header -->
+    <!-- header-bot -->
+    <div class="header-bot">
+        <div class="header-bot_inner_wthreeinfo_header_mid">
+            <!-- search -->
+            @using (Html.BeginForm("Index", "TimKiem", FormMethod.Get, new { @class = "form-inline" }))
+            {
+                <div class="col-md-4 header-middle">
+                    <form action="~/tim-kiem" method="post">
+                        <input type="text" name="search" placeholder="Tìm kiếm ..." required="">
+                        <button class="w3view-cart" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            }
+            <!-- logo -->
+            <div class="col-md-4 logo_agile">
+                <h1><a href="#"><span>E</span>lite Shoppy<i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
+            </div>
+            <!-- share -->
+            <div class="col-md-4 agileits-social top_content">
+                <ul class="social-nav model-3d-0 footer-social w3_agile_social">
+                    <li class="share">Chia sẻ : </li>
+                    <li>
+                        <a href="#" class="facebook">
+                            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="twitter">
+                            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="instagram">
+                            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="pinterest">
+                            <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //header-bot -->
+    <!-- mainmenu -->
+
+    <div class="ban-top">
+        <div class="container">
+            @Html.Action("MainMenu", "Module")
+        </div>
+    </div>
+    <!-- //mainmenu -->
+    <!-- Modal2 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            @Html.Action("DangKy", "KhachHang")
+            <!-- Modal content-->
+        </div>
+    </div>
+    <!-- Modal2 -->
+    <div>
+        @RenderBody()
+    </div>
+    <!--/grids-->
+    <div class="coupons">
+        <div class="coupons-grids text-center">
+            <div class="w3layouts_mail_grid">
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>MIỄN PHÍ VẬN CHUYỂN</h3>
+                        <p>Sử dụng mã miễn phí vận chuyển, giao tận nhà.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-headphones" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>HỖ TRỢ 24/7</h3>
+                        <p>Hỗ trợ những yêu cầu, thắc mắc, khiếu nại của khách hàng.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>MUA HÀNG TIẾT KIỆM</h3>
+                        <p>Hãy bỏ vào ống tiết kiệm số tiền dư sau khi mua sắm.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>QUÀ TẶNG MIỄN PHÍ</h3>
+                        <p>Chỉ cần đăng kí thông tin liên lạc là được nhận quà miễn phí.</p>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!--grids-->
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer_agile_inner_info_w3l">
+            <div class="col-md-3 footer-left">
+                @Html.Action("MenuFooter", "Module")
+            </div>
+            <div class="col-md-9 footer-right">
+                <div class="sign-grds">
+                    <div class="col-md-4 sign-gd">
+                        <h4>HỆ THỐNG <span>CỬA HÀNG</span></h4>
+                        <ul>
+                            <li>THÀNH PHỐ HỒ CHÍ MINH</li>
+                            <li>THÀNH PHỐ HÀ NỘI</li>
+                            <li>THÀNH PHỐ ĐÀ NẴNG</li>
+                            <li>THÀNH PHỐ HẢI PHÒNG</li>
+                            <li>TỈNH BÀ RỊA - VŨNG TÀU</li>
+                            <li>TỈNH KHÁNH HÒA</li>
+                            <li>TỈNH KIÊN GIANG</li>
+                            <li>TỈNH LÂM ĐỒNG</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 sign-gd-two">
+                        <h4>LIÊN <span>HỆ</span></h4>
+                        <div class="w3-address">
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Điện thoại</h6>
+                                    <p> 1900 6656</p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Email</h6>
+                                    <p>Email :<a href="#"> elite@sport.com</a></p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Địa chỉ</h6>
+                                    <p>
+                                        Thành phố Hồ Chí Minh.
+
+                                    </p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 sign-gd ">
+                        <h4>HỖ <span>TRỢ</span></h4>
+                        <div class="sign-gd">
+                            <ul>
+                                <li><a href="#">Các câu hỏi thường gặp</a></li>
+                                <li><a href="#">Tạo tài khoản mới</a></li>
+                                <li><a href="#">Danh sách yêu thích</a></li>
+                                <li><a href="#">Danh sách so sánh</a></li>
+                            </ul>
+                        </div>
+                        <ul class="social-nav footer-social w3_agile_social two">
+                            <li>
+                                <a href="#" class="facebook">
+                                    <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                                    <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="twitter">
+                                    <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                    <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="instagram">
+                                    <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                    <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pinterest">
+                                    <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                    <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="agile_newsletter_footer">
+                <div class="col-sm-6 newsleft">
+                    <h3>THAM GIA BẢNG TIN CỦA CHÚNG TÔI !</h3>
+                </div>
+                <div class="col-sm-6 newsright">
+                    <form action="#" method="post">
+                        <input type="email" placeholder="Nhập email của bạn..." name="email" required="">
+                        <input type="submit" value="GỬI">
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <p class="copy-right">&copy 2017 Elite shoppy. All rights reserved | Design by <a>Phan Trung Kiên</a></p>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //footer -->
+    <!-- js -->
+    <!--<script src="~/Public/js/jquery.easydropdown.js"></script>
+    <script src="~/Public/js/jquery-2.1.4.min.js"></script>-->
+    <!-- //js -->
+    <!--<script src="~/Public/js/modernizr.custom.js"></script>-->
+    <!-- jQuery -->
+    <!--<script src="~/Public/js/jquery.js"></script>-->
+    <!-- Bootstrap Core JavaScript -->
+    <!--<script src="~/Public/js/bootstrap.min.js"></script>-->
+    <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!-- js -->
+    <script type="text/javascript" src="~/Public/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <script src="~/Public/js/modernizr.custom.js"></script>
+    <!-- Custom-JavaScript-File-Links -->
+    <!-- cart-js -->
+    @*<script src="~/Public/js/responsiveslides.min.js"></script>
+        <script>
+            $(function () {
+                $("#slider").responsiveSlides({
+                    auto: false,
+                    nav: true,
+                    speed: 500,
+                    namespace: "callbacks",
+                    pager: true,
+                });
+            });
+        </script>*@
+    <script src="~/Public/js/minicart.min.js"></script>
+    <script>
+        // Mini Cart
+        paypal.minicart.render({
+            action: '#'
+        });
+
+        if (~window.location.search.indexOf('reset=true')) {
+            paypal.minicart.reset();
+        }
+    </script>
+
+    <!-- //cart-js -->
+    <!-- single -->
+    <script src="~/Public/js/imagezoom.js"></script>
+    <!-- single -->
+    <!-- script for responsive tabs -->
+    <script src="~/Public/js/easy-responsive-tabs.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true,   // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+            $('#verticalTab').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true
+            });
+        });
+    </script>
+    <!-- FlexSlider -->
+    <script src="~/Public/js/jquery.flexslider.js"></script>
+    <script>
+        // Can also be used with $(document).ready()
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
+    <!-- //FlexSlider-->
+    <!-- //script for responsive tabs -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/Public/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Public/js/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- for bootstrap working -->
+    <script type="text/javascript" src="~/Public/js/bootstrap.js"></script>
+</body>
+</html>

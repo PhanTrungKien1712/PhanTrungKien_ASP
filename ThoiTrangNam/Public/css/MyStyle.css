@@ -1,0 +1,51 @@
+﻿body {
+    
+}
+.text-footer {
+    color: #01cc6e;
+    text-align: center;
+    font-weight: bold;
+}
+.contact {
+    background: #181919;
+    padding: 2em 3em;
+}
+.grid figure h3 span {
+    font-weight: 800;
+    color: #01cc6e;
+}
+.product-new-top {
+    background: #01cc6e none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    right: 0;
+    padding: 0 10px 1px;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+}
+.sale-w3ls {
+    background: url('../images/94384_1637287435_blog web 1.jpg')no-repeat 0px 0px;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    min-height: 380px;
+}
+.w3layouts_mail_grid_left1.hvr-radial-out i{
+    font-size:30px;
+    text-align:center;
+    line-height:210%;
+}
+.page-head_agile_info_w3l {
+    background: url('../images/94384_1637287435_blog web 1.jpg')no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 200px;
+    padding-top: 50px;
+}

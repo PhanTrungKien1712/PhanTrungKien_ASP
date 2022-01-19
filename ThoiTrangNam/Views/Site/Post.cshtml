@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MyClass.Models.PostInfo>
+@{
+    ViewBag.Title = "Post";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<div class="new_arrivals_agile_w3ls_info">
+    <div class="container">
+        <h3 class="wthree_text_info"><span>TẤT CẢ </span>BÀI VIẾT </h3>
+        @foreach (var post in Model)
+        {
+            <div class="men-wear-bottom">
+                <div class="col-sm-4 men-wear-left">
+                    <a href="~/@post.Slug">
+                        <img class="img-responsive" src="~/Public/images/posts/@post.Img" alt=" " />
+                    </a>
+                </div>
+                <div class="col-sm-8 men-wear-right">
+                    <h4><a href="~/@post.Slug">@post.Title</a></h4>
+                    <p>@XString.Str_Limit(post.Detail, 400)</p>
+                    <div class="text-right"><a href="~/@post.Slug">Xem thêm</a></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+        }
+    </div>
+</div>
+

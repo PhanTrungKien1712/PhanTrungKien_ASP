@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Đăng ký";
+}
+@using (Html.BeginForm("DangKy", "KhachHang", FormMethod.Post))
+{
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body modal-body-sub_agile">
+            <h3 class="agileinfo_sign text-center">Đăng ký</h3>
+            <div class="col-md-8 modal_body_left modal_body_left1">
+                <form action="#" method="post">
+                    <div class="form-group my-2">
+                        <label>Họ tên khách hàng</label>
+                        <input type="text" name="fullname" required="">
+                    </div>
+                    <div class="form-group my-2">
+                        <label>Tên đăng nhập</label>
+                        <input type="text" name="username" required="">
+                    </div>
+                    <div class="form-group my-2">
+                        <label>Mật khẩu</label>
+                        <input type="password" name="password" required="">
+                    </div>
+                    <div class="form-group my-2">
+                        <label>Email</label>
+                        <input type="email" name="email" required="">
+                    </div>
+                    <div class="form-group my-2">
+                        <label>Điện thoại</label>
+                        <input type="text" name="phone" required="">
+                    </div>
+                    <div class="form-group my-2">
+                        <label>Địa chỉ</label>
+                        <input type="text" name="address" required="">
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-4 modal_body_right modal_body_right1">
+                <img src="~/Public/images/Untitled2.jpg" alt=" " />
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group my-2 text-center">
+                <input type="submit" value="ĐĂNG KÝ">
+            </div>
+            <p class="text-center">
+                Bạn đã có tài khoản?
+                <a href="~/dang-nhap">Đăng nhập</a>
+            </p>
+        </div>
+    </div>
+    <!-- //Modal content-->
+}
+
+

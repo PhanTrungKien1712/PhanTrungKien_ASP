@@ -1,0 +1,138 @@
+﻿@model IEnumerable<CartItem>
+@{
+    ViewBag.Title = "Thanh toán";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+@{
+    var user = ViewBag.user;
+}
+@using (Html.BeginForm("DatMua", "Giohang", FormMethod.Post))
+{
+    <div class="container-fluid">
+        <div class="col-md-12 bb-grids bb-left-agileits-w3layouts">
+            <div class="bb-left-agileits-w3layouts-inner grid">
+                <figure class="effect-roxy">
+                    <img src="~/Public/images/slidersinger.jpg" alt=" " class="img-responsive" />
+                    <figcaption>
+                        <h3>THANH TOÁN</h3>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <div class="col-md-9">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center">Mã sản phẩm</th>
+                        <th class="text-center">Hình sản phẩm</th>
+                        <th class="text-center">Tên sản phẩm</th>
+                        <th class="text-center">Giá sản phẩm</th>
+                        <th class="text-center">Số lượng</th>
+                        <th class="text-center">Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ double tongtien = 0;}
+                    @foreach (var cart in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@cart.ProductId</td>
+                            <td class="text-center">
+                                <img src="~/Public/images/products/@cart.Img" class="card-img-top" alt="hinhsp" style="height:50%; width:50%;" />
+                            </td>
+                            <td class="text-center"><strong>@cart.Name</strong></td>
+                            <td>@string.Format("{0:0,0}", @cart.Price)₫</td>
+                            <td class="text-center">@cart.Qty</td>
+                            <td>@string.Format("{0:0,0}", @cart.Amount)₫</td>
+                        </tr>
+                        tongtien += cart.Amount;
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <h4 class="text-center"><strong>TỔNG THANH TOÁN</strong></h4>
+            <br />
+            <p><h3 class="wthree_text_info">@string.Format("{0:0,0}", @tongtien)₫</h3></p>
+            <button type="submit" class="btn hvr-outline-out btn-block"><strong>ĐẶT HÀNG</strong></button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-6">
+            <div class="responsive_tabs_agileits">
+                <div id="horizontalTab">
+                    <div class="resp-tabs-container">
+                        <div class="tab">
+                            <div class="single_page_agile_its_w3ls">
+                                <div class="bb-grids bb-left-agileits-w3layouts">
+                                    <div class="contact">
+                                        <h1 class="text-footer">KHÁCH HÀNG</h1>
+                                        <br />
+                                        <div class="form-group my-2">
+                                            <label class="white-w3ls">Họ tên khách hàng: </label>
+                                            <input name="FullName" readonly value="@user.FullName" class="form-control" />
+                                        </div>
+                                        <div class="form-group my-2">
+                                            <label class="white-w3ls">Email: </label>
+                                            <input name="Email" readonly value="@user.Email" class="form-control" />
+                                        </div>
+                                        <div class="form-group my-2">
+                                            <label class="white-w3ls">Điện thoại: </label>
+                                            <input name="Phone" readonly value="@user.Phone" class="form-control" />
+                                        </div>
+                                        <div class="form-group my-2">
+                                            <label class="white-w3ls">Địa chỉ: </label>
+                                            <input name="Address" readonly value="@user.Address" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="responsive_tabs_agileits">
+                <div id="horizontalTab">
+                    <div class="resp-tabs-container">
+                        <div class="tab">
+                            <div class="single_page_agile_its_w3ls">
+                                <div class="bb-grids bb-left-agileits-w3layouts">
+                                    <div class="contact">
+                                        <h1 class="text-footer">NGƯỜI NHẬN</h1>
+                                        <br />
+                                        <div class="form-group my-2">
+                                            <label class="white-w3ls" >Họ tên người nhận: </label>
+                                            <input name="ReceriverName" class="form-control" />
+                                        </div>
+                                        <div class="form-group my-2">
+                                            <label class="white-w3ls">Email: </label>
+                                            <input name="ReceriverEmail" class="form-control" />
+                                        </div>
+                                        <div class="form-group my-2">
+                                            <label class="white-w3ls">Điện thoại: </label>
+                                            <input name="ReceriverPhone" class="form-control" />
+                                        </div>
+                                        <div class="form-group my-2">
+                                            <label class="white-w3ls">Địa chỉ: </label>
+                                            <input name="ReceriverAddress" class="form-control" />
+                                        </div>
+                                        <div class="form-group my-2">
+                                            <label class="white-w3ls">Ghi chú </label>
+                                            <input name="Note" class="form-control" rows="2" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

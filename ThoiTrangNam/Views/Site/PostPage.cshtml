@@ -1,0 +1,17 @@
+﻿@model MyClass.Models.Post
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<div class="new_arrivals_agile_w3ls_info">
+    <div class="container">
+        <h3 href="#" class="wthree_text_info">@Model.Title</h3>
+        <div id="horizontalTab">
+            <p>@Html.Raw(Model.Detail)</p>
+            <br />
+            <img src="~/Public/images/posts/@Model.Img" alt=" " class="img-responsive" />
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,65 @@
+﻿
+@model IEnumerable<CartItem>
+@{
+    ViewBag.Title = "Tài khoản";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+@{
+    var user = ViewBag.user;
+}
+@using (Html.BeginForm("TaiKhoan", "Khachhang", FormMethod.Post))
+{
+    <div class="container-fluid">
+        <div class="col-md-12 bb-grids bb-left-agileits-w3layouts">
+            <div class="bb-left-agileits-w3layouts-inner grid">
+                <figure class="effect-roxy">
+                    <img src="~/Public/images/slidersinger.jpg" alt=" " class="img-responsive" />
+                    <figcaption>
+                        <h3>HỒ SƠ CỦA TÔI</h3>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div class="responsive_tabs_agileits">
+                <div id="horizontalTab">
+                    <div class="resp-tabs-container">
+                        <div class="tab">
+                            <div class="single_page_agile_its_w3ls">
+                                <div class="bb-grids bb-left-agileits-w3layouts">
+                                    <div class="contact">
+                                        <div class="text-center">
+                                            <img src="~/Public/images/dang-nhap.png" class="text-center" />
+                                        </div>
+                                        <p class="text-footer">
+                                            XIN CHÀO: @user.FullName
+                                        </p>
+                                        <form action="#" method="post">
+                                            <div class="form-group my-2">
+                                                <label class="white-w3ls">Tên đăng nhập</label>
+                                                <input name="FullName" readonly value="@user.UserName" class="form-control" />
+                                            </div>
+                                            <div class="form-group my-2">
+                                                <label class="white-w3ls">Điện thoại</label>
+                                                <input name="Phone" readonly value="@user.Phone" class="form-control" />
+                                            </div>
+                                            <div class="form-group my-2">
+                                                <label class="white-w3ls">Email</label>
+                                                <input name="Email" readonly value="@user.Email" class="form-control" />
+                                            </div>
+                                            <div class="form-group my-2">
+                                                <label class="white-w3ls">Địa chỉ</label>
+                                                <input name="Address" readonly value="@user.Address" class="form-control" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+}
+

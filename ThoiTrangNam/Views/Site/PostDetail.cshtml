@@ -1,0 +1,43 @@
+﻿@model MyClass.Models.Post
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+<div class="new_arrivals_agile_w3ls_info">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-12 col-lg-12">
+                <h3 class="wthree_text_info">@Model.Title</h3>
+                <div id="horizontalTab">
+                    <p>@Html.Raw(Model.Detail)</p>
+                    <br />
+                    <img src="~/Public/images/posts/@Model.Img" alt=" " class="img-responsive" />
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3>Các bài viết liên quan</h3>
+                <br />
+                <ul>
+                    @foreach (var post in ViewBag.ListOther)
+                    {
+                        <div class="col-md-4 product-men single">
+                            <div class="men-pro-item simpleCart_shelfItem">
+                                <img src="~/Public/images/posts/@post.Img" alt="hinhsp" />
+                                <div class="item-info-product">
+                                    <strong><a href="~/@post.Slug">@post.Title</a></strong>
+                                </div>
+                                <div class="info-item">
+                                    <p style="margin:0 7px;"><i class="glyphicon glyphicon-calendar"></i> @post.CreatedAt <i class="glyphicon glyphicon-comment"></i> 0</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

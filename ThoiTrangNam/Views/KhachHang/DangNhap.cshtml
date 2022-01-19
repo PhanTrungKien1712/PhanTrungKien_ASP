@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+@using (Html.BeginForm("DangNhap", "Khachhang", FormMethod.Post))
+{
+<div class="container-fluid">
+    <div class="col-md-12 bb-grids bb-left-agileits-w3layouts">
+        <div class="bb-left-agileits-w3layouts-inner grid">
+            <figure class="effect-roxy">
+                <img src="~/Public/images/slidersinger.jpg" alt=" " class="img-responsive" />
+                <figcaption>
+                    <h3>ĐĂNG NHẬP</h3>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group my-2">
+        <label></label>
+        <input name="username" type="text" class="form-control" placeholder="Nhập tên đăng nhập" />
+    </div>
+    <div class="form-group my-2">
+        <input name="password" type="password" class="form-control" placeholder="Nhập mật khẩu" />
+    </div>
+    @Html.Raw(@ViewBag.Error)
+    <div class="swit form text-center">
+            <input type="submit" value="ĐĂNG NHẬP">
+    </div>
+</div>
+}
+
+
+
+

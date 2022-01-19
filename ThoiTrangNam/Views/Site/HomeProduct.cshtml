@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MyClass.Models.ProductInfo>
+@{  
+    var category = ViewBag.Category;
+}
+@if (Model.Count() != 0)
+{
+<div class="resp-tabs-container">
+    <h1><strong>@category.Name</strong></h1>
+    <!--/tab_one-->
+    <div class="tab">
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-3 product-men">
+                    <div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item">
+                            <img src="~/Public/images/products/@product.Img" class="pro-image-front" alt="hinhsp" />
+                            <img src="~/Public/images/products/@product.Img" class="pro-image-back" alt="hinhsp" />
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="~/@product.Slug" class="link-product-add-cart">Xem chi tiết</a>
+                                </div>
+                            </div>
+                            <span class="product-new-top">New</span>
+                        </div>
+                        <div class="item-info-product ">
+                            <strong><a href="~/@product.Slug">@product.Name</a></strong>
+                            <p>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </p>
+                            <div class="info-product-price">
+                                <del>@string.Format("{0:0,0}", @product.Price)₫</del>
+                            </div>
+                            <div class="info-product-price">
+                                <h3><strong>@string.Format("{0:0,0}", @product.PriceSale)₫</strong></h3>
+                            </div>
+                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                <form action="@Url.Action("CartAdd","Giohang", new { productid = product.Id})" method="post">
+                                    <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="swit form text-center">
+                <a href="~/@category.Slug">
+                    <input type="submit" value="XEM THÊM">
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+}

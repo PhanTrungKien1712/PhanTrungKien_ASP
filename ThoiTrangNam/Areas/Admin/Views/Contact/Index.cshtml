@@ -1,0 +1,94 @@
+﻿@model IEnumerable<MyClass.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section header
+{
+    <link href="~/Public/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+@section footer
+{
+    <script src="~/Public/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+
+    <!-- Main content -->
+    <section class="content my-2">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong class="text-danger text-uppercase">LIÊN HỆ</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                @Html.Partial("Message")
+                <table class="table table-bordered table-striped" id="myTable">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="checkId" value="" /></th>
+                            <th>Tiêu đề liên hệ</th>
+                            <th>Email</th>
+                            <th>Điện thoại</th>
+                            <th class="text-center" style="width:200px;">Trạng thái</th>
+                            <th class="text-center" style="width:200px;">Chức năng</th>
+                            <th class="text-center" style="width:20px;">ID </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                        <tr>
+                            <td><input type="checkbox" name="checkId" value="" /></td>
+                            <td>@item.Title</td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td class="text-center">
+                                @if (item.Status == 1)
+                                {
+                                    <a href="@Url.Action("Status", "Contact", new { id = item.Id })" class="btn btn-sm btn-success"><i class="fas fa-toggle-on"></i> Trả lời</a>
+                                }
+                                else
+                                {
+                            <a href="@Url.Action("Status", "Contact", new { id = item.Id })" class="btn btn-sm btn-danger"><i class="fas fa-toggle-off"></i>  Chưa trả lời</a>
+                                }
+                            </td>
+                            <td class="text-center">
+                                <a href="@Url.Action("Edit", "Contact", new { id = item.Id })" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Trả lời</a>
+                            </td>
+                            <td>@item.Id</td>
+                        </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

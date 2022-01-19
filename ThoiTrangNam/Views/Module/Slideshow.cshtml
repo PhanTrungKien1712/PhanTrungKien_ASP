@@ -1,0 +1,82 @@
+﻿@model IEnumerable<MyClass.Models.Slider>
+    <br />
+<div class="container-fluid">
+    <div class="row carousel-holder">
+            <div class="col-md-8">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+
+                        @{ int index = 0;}
+                        @foreach (var slider in Model)
+                        {
+                            if (index == 0)
+                            {
+                                <div class="item active">
+                                    <img class="slide-image" src="~/Public/images/sliders/@slider.Img" alt="@slider.Name">
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="item">
+                                    <img class="slide-image" src="~/Public/images/sliders/@slider.Img" alt="@slider.Name">
+                                </div>
+                            }
+                            index++;
+                        }
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-2 bb-grids bb-middle-agileits-w3layouts">
+                <div class="bb-middle-agileits-w3layouts grid">
+                    <figure class="effect-roxy">
+                        <img src="~/Public/images/sliders/SlideAo.jpg" alt=" " class="img-responsive" />
+                        <figcaption>
+                            <h3></h3>
+                            <p>Áo</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="bb-middle-agileits-w3layouts forth grid">
+                    <figure class="effect-roxy">
+                        <img src="~/Public/images/sliders/SlideQuan.jpg" alt=" " class="img-responsive">
+                        <figcaption>
+                            <p>Quần</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-2 bb-grids bb-middle-agileits-w3layouts">
+                <div class="bb-middle-agileits-w3layouts grid">
+                    <figure class="effect-roxy">
+                        <img src="~/Public/images/sliders/SlideDongHo.jpg" alt=" " class="img-responsive" />
+                        <figcaption>
+                            <p>Đồng hồ</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="bb-middle-agileits-w3layouts forth grid">
+                    <figure class="effect-roxy">
+                        <img src="~/Public/images/sliders/SlideGiay.jpg" alt=" " class="img-responsive">
+                        <figcaption>
+                            <p>Giày</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+</div>
